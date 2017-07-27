@@ -48,7 +48,7 @@ label{
 }
 /*-----start-header----*/
 .header-top-strip{
-	padding:8px 0 14px 0;
+	padding:25px 0 14px 0;
 	background-color:#816263;
 }
 .header-top-left ul li {
@@ -168,6 +168,7 @@ a.simpleCart_empty {
 .navbar-header {
     float: left;
     width: 35%;
+    position: fixed;
 }
 ul.multi-column-dropdown h6 {
     font-size: 14px;
