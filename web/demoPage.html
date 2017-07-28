@@ -1,14 +1,25 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <html>
 <head>
+<title>Eshop a Flat E-Commerce Bootstrap Responsive Website Template | Contact :: w3layouts</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
-
 <!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Eshop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
 <!-- for bootstrap working -->
 	<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
 <!-- //for bootstrap working -->
@@ -21,7 +32,7 @@
 	<!-- header-section-starts -->
 	<div class="header">
 		<div class="header-top-strip">
-		<!-- 	<div class="container">
+			<div class="container">
 				<div class="header-top-left">
 					<ul>
 						<li><a href="account.html"><span class="glyphicon glyphicon-user"> </span>Login</a></li>
@@ -31,19 +42,20 @@
 				<div class="header-right">
 						<div class="cart box_1">
 							<a href="checkout.html">
-								<h3> <span class="simpleCart_total"> $1.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>)<img src="images/bag.png" alt=""></h3>
+								<h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>)<img src="images/bag.png" alt=""></h3>
 							</a>	
 							<p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p>
-							<!-- <div class="clearfix"> </div> 
+							<div class="clearfix"> </div>
 						</div>
 				</div>
 				<div class="clearfix"> </div>
-			</div>-->
-		</div> 
+			</div>
+		</div>
 	</div>
 	<!-- header-section-ends -->
-			<div class="banner-top">
+	<div class="inner-banner">
 		<div class="container">
+			<div class="banner-top inner-head">
 				<nav class="navbar navbar-default" role="navigation">
 	    <div class="navbar-header">
 	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -52,15 +64,15 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-				<div>
-					<h1><a href="index.html"><span>BHARAT MOTORS</span></a></h1>
+				<div class="logo">
+					<h1><a href="index.html"><span>E</span> -Shop</a></h1>
 				</div>
 	    </div>
 	    <!--/.navbar-header-->
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	        <ul class="nav navbar-nav">
-			<!-- <li><a href="index.html">Home</a></li>
+			<li><a href="index.html">Home</a></li>
 		        <li class="dropdown">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
 		            <ul class="dropdown-menu multi-column columns-3">
@@ -170,15 +182,62 @@
 							<div class="clearfix"></div>
 			            </div>
 		            </ul>
-		        </li> -->
-					<li><a href="typography.html">ABOUT US</a></li>
-					<li><a ng-click="Contact_function()">CONTACT US</a></li>
+		        </li>
+					<li><a href="typography.html">TYPO</a></li>
+					<li id="contactUs">CONTACT</li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
 	</nav>
 	<!--/.navbar-->
 </div>
+	</div>
+		</div>
+		
+<!-- contact-page -->
+<div class="contact">
+	<div class="container">
+	<div class="dreamcrub">
+			   	 <ul class="breadcrumbs">
+                    <li class="home">
+                       <a href="index.html" title="Go to Home Page">Home</a>&nbsp;
+                       <span>&gt;</span>
+                    </li>
+                    <li class="women">
+                       Contact
+                    </li>
+                </ul>
+                <ul class="previous">
+                	<li><a href="index.html">Back to Previous Page</a></li>
+                </ul>
+                <div class="clearfix"></div>
+			   </div>
+		<div class="contact-info">
+			<h2>FIND US HERE</h2>
+		</div>
+		<div id="info" class="contact-map">
+		</div>
+	</div>
 </div>
+<!-- //contact-page -->
+
+		
+		
 </body>
 </html>
+<script type="text/javascript">
+$("#contactUs").click(function(){
+    alert("The paragraph was clicked.");
+    $.ajax({
+            url:"/BHARATMOTORS/web/php_pages/contact.php",
+            data:"id="+1,
+            type:"POST",
+            success:function(suc)
+                    {   alert(suc);
+
+                        $('#info').html(suc);
+       
+                        }
+        })
+});
+</script>

@@ -1,0 +1,11 @@
+
+{
+"Title" : "BHARAT MOTORS",
+"Name"  : "Mr. Subhash & Mr. Pankaj",
+"Address" : "Kejriwal House, 1531, S. P. Mukherjee Marg, Near Novelty Cinema, Backside Fire Station, Delhi, India - 110006",
+"Phone" : "+91-11-23912233",
+"Mobile" : "+91-9818256891,+91-9999569276,+91-9810286891",
+"Email_Address" : "sales@bharatmotorsmb.in",
+"Web_Site" : "http://www.bharatmotorsindia.in",
+"Web_Page" : "https://www.exportersindia.com/bharat-moters/"
+}
