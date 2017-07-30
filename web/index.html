@@ -27,31 +27,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //for bootstrap working -->
 <!-- cart -->
 	<script src="js/simpleCart.min.js"> </script>
+	<script src="js/bm_Common.js"></script>
 	<script>
 	$(function(){
   $(".header").load("header.html"); 
-  
-});
+  	});
 </script>
-<script>
-         angular.module("BM_Site", [])
-         
-         .controller("contact_about", function($scope,$http) {
-           $scope.Contact_function=function()
-           {
-           	$scope.result="chal ke nhi dera kuch";
-           	$http({
-           		method:'GET',
-           		url:'contact1.json'
-           	}).success(function(data)
-           	{
-           		$scope.contact_details=data;
-           		//[{'Title':'hi'}];
 
-           	}) ;        
-           };
-         });
-      </script>
 <!-- cart -->
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 </head>
@@ -122,7 +104,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<div ng-controller="contact_about" class="table-responsive" >
 		<a ng-click="Contact_function()">CONTACT US</a>
-		<table class=".table" ng-repeat="details in contact_details">
+		<table class="table" ng-repeat="details in contact_details">
 		<tr>
 			<td>TITLE:</td>
 			<td>{{details.Title}}</td>
