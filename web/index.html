@@ -27,30 +27,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //for bootstrap working -->
 <!-- cart -->
 	<script src="js/simpleCart.min.js"> </script>
+	<script src="js/bm_Common.js"></script>
 	<script>
 	$(function(){
   $(".header").load("header.html"); 
-  
-});
+  	});
 </script>
-<script>
-         angular.module("BM_Site", [])
-         
-         .controller("contact_about", function($scope,$http) {
-           $scope.Contact_function=function()
-           {
-           	$scope.result="chal ke nhi dera kuch";
-           	$http({
-           		method:'GET',
-           		url:'contact.txt'
-           	}).success(function(data)
-           	{
-           		$scope.contact_details= data.data;
 
-           	}) ;        
-           };
-         });
-      </script>
 <!-- cart -->
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 </head>
@@ -119,15 +102,45 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	</div>
 		</div>
-		<div ng-controller="contact_about" >
+		<div ng-controller="contact_about" class="table-responsive" >
 		<a ng-click="Contact_function()">CONTACT US</a>
-
-			<p ng-repeat="details in contact_details">
-			 {{details.Title}}  
-			 </p>
-			 {{result}}
+		<table class="table" ng-repeat="details in contact_details">
+		<tr>
+			<td>TITLE:</td>
+			<td>{{details.Title}}</td>
+		</tr>
+		<tr>
+			<td>NAME:</td>
+			<td>{{details.Name}}</td>
+		</tr>
+		<tr>
+			<td>Address:</td>
+			 <td>{{details.Address}}</td>
+		</tr>
+		<tr>
+			<td>PHONE:</td>
+			 <td>{{details.Phone}}</td> 
+		</tr>
+		<tr>
+			<td>MOBILE:</td>	
+			 <td>{{details.Mobile}}</td>
+		</tr>
+		<tr>
+			<td>EMAIL-ADDRESS:</td>
+			<td>{{details.Email_Address}}</td>
+		</tr>
+		<tr>
+			<td>WEB-SITE:</td>	
+			 <td>{{details.Web_Site}}</td>
+		</tr>
+		<tr>
+			<td>WEB-PAGE:</td>
+			<td>{{details.Web_Page}}</td>  
+		</tr>	 
+		<table>
 			 
 		</div>
+		
 		<!-- content-section-starts-here -->
 		<div class="container">
 			<div class="main-content">
