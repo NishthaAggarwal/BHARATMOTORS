@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bharat Motors</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<!-- Custom Theme files -->
+<!-- <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script> -->
+
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<!-- //for bootstrap working -->
+<!-- cart -->
+<script src="js/angular.min.js"></script>
+	<script src="js/simpleCart.min.js"> </script>
+	<script src="js/bm_Common.js"></script>
+	
+
+<!-- cart -->
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+</head>
+<body >
+<div  ng-controller="contact_about" class="table-responsive" >
+		<!-- <a ng-click="Contact_function()">CONTACT US</a> -->
+		
+		<table class="table" ng-repeat="details in contact_details">
+		<tr>
+			<td>TITLE:</td>
+			<td>{{details.Title}}</td>
+		</tr>
+		<tr>
+			<td>NAME:</td>
+			<td>{{details.Name}}</td>
+		</tr>
+		<tr>
+			<td>Address:</td>
+			 <td>{{details.Address}}</td>
+		</tr>
+		<tr>
+			<td>PHONE:</td>
+			 <td>{{details.Phone}}</td> 
+		</tr>
+		<tr>
+			<td>MOBILE:</td>	
+			 <td>{{details.Mobile}}</td>
+		</tr>
+		<tr>
+			<td>EMAIL-ADDRESS:</td>
+			<td>{{details.Email_Address}}</td>
+		</tr>
+		<tr>
+			<td>WEB-SITE:</td>	
+			 <td>{{details.Web_Site}}</td>
+		</tr>
+		<tr>
+			<td>WEB-PAGE:</td>
+			<td>{{details.Web_Page}}</td>  
+		</tr>	 
+		</table>
+			 
+		</div>
+		</body>
+		</html>

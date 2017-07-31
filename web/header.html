@@ -11,14 +11,26 @@
 
 <!-- for bootstrap working -->
 	<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
-		<script src="js/bm_Common.js"></script>
+		
+		<script src="js/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 <!-- //for bootstrap working -->
 <!-- cart -->
 	<script src="js/simpleCart.min.js"> </script>
+	<script src="js/bm_Common.js"></script>
+	<!-- <script>
+	var app=angular.module("BM_Site", []);
+	 app.controller("mainController", function($scope) {
+
+        // create a message to display in our view
+        $scope.message = 'Everyone come and see how good I look!';
+    });
+	</script> -->
 <!-- cart -->
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 </head>
-<body>
+<body  ng-controller="mainController">
+
 	<!-- header-section-starts -->
 	<div class="header">
 		<div class="header-top-strip">
@@ -35,7 +47,7 @@
 								<h3> <span class="simpleCart_total"> $1.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>)<img src="images/bag.png" alt=""></h3>
 							</a>	
 							<p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p>
-							<!-- <div class="clearfix"> </div> 
+							<div class="clearfix"> </div> 
 						</div>
 				</div>
 				<div class="clearfix"> </div>
@@ -60,7 +72,7 @@
 	    <!--/.navbar-header-->
 	
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	        <ul class="nav navbar-nav">
+	        <ul class="nav navbar-nav" ng-controller="contact_about">
 			<!-- <li><a href="index.html">Home</a></li>
 		        <li class="dropdown">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
@@ -172,15 +184,16 @@
 			            </div>
 		            </ul>
 		        </li>  -->
-					<li><a href="typography.html">ABOUT US</a></li>
-					<li><a ng-click="Contact_function()">CONTACT US</a></li>
+					<li><a href="#about">ABOUT US</a></li>
+					<li><a href="#contact" ng-click="Contact_function()">CONTACT US</a></li>
 	        </ul>
 	    </div>
 	    <!--/.navbar-collapse-->
 	</nav>
 	<!--/.navbar-->
-	
+
 </div>
 </div>
+
 </body>
 </html>
