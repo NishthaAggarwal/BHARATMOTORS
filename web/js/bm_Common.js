@@ -29,10 +29,10 @@ app.controller("contact_about", function($scope,$http) {
             // })
 
             // route for the about page
-            // .when('/about', {
-            //     templateUrl : 'pages/about.html',
-            //     controller  : 'aboutController'
-            // })
+            .when('/about', {
+                templateUrl : 'about.html',
+                //controller  : 'aboutController'
+            })
 
             // route for the contact page
             .when('/contact', {
