@@ -16,12 +16,20 @@ if(end($httpHost)=='com')
     $css_url = $site_url . "web/css";
     $php_page_url = $site_url . "web/php_pages";
     $js_url = $site_url . "web/js";
-    echo $img_url;
-
-
     function js_url()
     {
-    	global $js_url;
-    	return $js_url . "web/js/";
+    	global $site_url;
+    	return $site_url . "web/js/";
     }
+    function css_url()
+    {
+    	global $site_url;
+    	return $site_url . "web/css/";
+    }
+    function pr($data) {
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+	}
+
 ?>
