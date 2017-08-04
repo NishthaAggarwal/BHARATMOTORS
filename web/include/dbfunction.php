@@ -1,8 +1,7 @@
 <?php
 
-
 function insert_mongo($table,$data)
-{
+{ 
     global $db;    
     $res = $db->$table->insert($data);
     return $res;
@@ -25,7 +24,7 @@ function delete_mongo($table,$condition)
 function select_mongo($table,$condition,$params=array())
 {
     global $db;
-    $db->$table->find($condition,$params);
+    $res = $db->$table->find();
     return $res;
 }
 
@@ -47,7 +46,6 @@ function count_mongo($table,$condition=array())
 function select_limit_mongo($table,$condition,$params=array(),$index,$nrecords)
 {
     global $db;
-    $com_data = get_company_data();
     $res = $db->$table->find($condition,$params)->limit($nrecords)->skip($index);
     return $res;
 }

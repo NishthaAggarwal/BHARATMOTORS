@@ -3,19 +3,27 @@
 include '../global.php' ; 
 include '../demoPage.html' ; 
 // include '../include/dbfunction';
-include '../include/connection.php';
-include '../include/dbfunction.php';
+//include '../include/connection.php';
+
+include '../module/function.php';
 foreach (glob("../css/*.css") as $filename) {
   echo"<link type='text/css' rel='stylesheet' href='$filename'>\n";
 }
-$data = array('product_id' => '8',
+
+
+
+ $data = array(
   'product_name' => 'Bottle Jacks',
   'product_desc' => 'We carefully select the packaging supplies to be used for wrapping the products hence, mitigating the risk of damage posed by loading/ unloading, shipping, and other external factors. Our products are the most sought after in the market, as they are specifically made as per global and domestic quality managements systems.',
   'product_price' => '10',
   'product_quantity' => '100');
-
-$result = insert_mongo('product',$data);
+ $result = add_product($data);
 pr($result);
+// $data = array(
+//   'product_name' => 'Bottle Jacks'
+//   );
+// $result = get_product();
+// pr($result);
 
 ?>
 
@@ -29,7 +37,7 @@ pr($result);
 	<script src="../js/simpleCart.min.js"> </script>
 <!-- cart -->
 <!-- <link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" /> -->
-
+<button  id="btn" onclick="add_product('hello')">CLICK ME</button>
 <script type="text/javascript">
 $("#contactUs").click(function(){
     alert("The paragraph was clicked.");
@@ -44,7 +52,19 @@ $("#contactUs").click(function(){
        
                         }
         })
-});
+// });
+//  $('#btn').click(function() 
+//  {
+//  $.ajax({
+//   type: "POST",
+//   url: "C:/xampp/htdocs/BHARATMOTORS/web/module/function.php",
+//   data: { name: "John" }
+// }).done(function( msg ) {
+//   alert( "Data Saved: " + msg );
+// });    
+
+// });
+
 </script>
 
-<?php ?>
+<?php  ?>

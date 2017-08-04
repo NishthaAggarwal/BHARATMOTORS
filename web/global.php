@@ -8,7 +8,7 @@ if(end($httpHost)=='com')
 }else{
     $currentStructure=array_values(array_filter(explode("/",$_SERVER['PHP_SELF'])));
     $folder=$currentStructure[0];
-    $server_path = dirname(__FILE__)."/";
+    $server_path = dirname(__FILE__)."\\";
     $site_url = "http://$_SERVER[HTTP_HOST]/$folder/";
     }
 
@@ -31,5 +31,5 @@ if(end($httpHost)=='com')
     print_r($data);
     echo "</pre>";
 	}
-
+	require $server_path .'include/connection.php';
 ?>
