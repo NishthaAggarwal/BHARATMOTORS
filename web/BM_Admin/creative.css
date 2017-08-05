@@ -499,3 +499,23 @@ body {
   display:none;
 }
 
+.form-control
+{
+  width: 100%;
+  border-radius: 10px;
+  float: right;
+}
+
+.modal-header,.close ,.loginbutton{
+      background-color: #d27979;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-content
+  {
+    margin-top: 45px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
