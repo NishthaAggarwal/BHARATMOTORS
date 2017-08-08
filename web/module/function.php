@@ -27,7 +27,7 @@ function get_product()
     $all_data = array();
     $cursor=select_mongo('product',array(),array());
     foreach ($cursor as $doc) {
-    array_push($all_data, $doc); 
+    array_push($all_data, $doc);
     }
      return array("success" => "true", "data" => $all_data, "error_code" => "100");
 }

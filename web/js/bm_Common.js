@@ -13,7 +13,21 @@ app.controller("contact_about", function($scope,$http) {
            	}) ;        
        //   };
          });
+var app1=angular.module("BM_Site", []);
+app1.controller("fetchingProducts", function($scope,$http) {
+  $scope.result="chalega ya nhi";
+  $scope.allRecords=function(){
 
+      $http({
+              method:'POST',
+              url:'product.php'
+            }).success(function(data)
+            {
+              $scope.result1=JSON.stringify(data);
+              //[{'Title':'hi'}];
+            }) ;        
+          };
+         });
 
 
     

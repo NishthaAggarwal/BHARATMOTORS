@@ -21,7 +21,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- for bootstrap working -->
 	
 </head>
-<body>
+<body ng-app="BM_Site">
 	<!-- header-section-starts -->
 	<div class="header">
 		<div class="header-top-strip">
@@ -188,7 +188,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		
 <!-- contact-page -->
-<div class="contact">
+
+<div class="contact" ng-controller="fetchingProducts">
 	<div class="container">
 	<div class="dreamcrub">
 			   	 <ul class="breadcrumbs">
@@ -211,6 +212,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div id="info" class="contact-map">
 		</div>
 	</div>
+<button  id="btn" ng-click="allRecords()">CLICK ME</button>
+{{result1}}
 </div>
 <!-- //contact-page -->
 
