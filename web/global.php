@@ -31,5 +31,5 @@ if(end($httpHost)=='com')
     print_r($data);
     echo "</pre>";
 	}
-	require $server_path .'include/connection.php';
+	 require $server_path .'include/connection.php';
 ?>

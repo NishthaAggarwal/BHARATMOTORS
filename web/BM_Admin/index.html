@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="BM_Site_Admin">
 <head>
 <title>Bharat Motors</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
-<script src="js/angular.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="../js/jquery.min.js"></script>
+<!-- <script src="../js/angular.min.js"></script> -->
+<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script> -->
 <!-- Custom Theme files -->
 <!-- <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script> -->
 
@@ -16,11 +16,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <!-- for bootstrap working -->
-	<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
+	  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
 <!-- //for bootstrap working -->
 <!-- cart -->
-	<script src="js/simpleCart.min.js"> </script>
-	<script src="js/bm_Common.js"></script>
+	<script src="../js/simpleCart.min.js"> </script>
+	<script src="angular_AdminJS.js"></script>
 	
 
 <!-- cart -->
@@ -42,7 +45,8 @@
   
   </style>
 </head>
-<body>
+<body ng-controller="LoginController">
+{{ message }}
 	<div class="header">
 		<div class="header-top-strip">
 		<div class="container" style="color:white;text-align: center;font-family: Courier;font-size: 50px;">
@@ -65,21 +69,21 @@
           <form role="form">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter name">
+              <input type="text" class="form-control" ng-model="adminInfo.username" id="username" placeholder="Enter name">
             </div>
             <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+              <input type="text" class="form-control" ng-model="adminInfo.psw" id="psw" placeholder="Enter password">
             </div>
             <!-- <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
             </div> -->
-              <button type="submit" class="btn btn-block loginbutton"><span class="glyphicon glyphicon-off"></span> Login</button>
+             <button type="submit" class="btn btn-block loginbutton" ng-click="validateCredentials(adminInfo)"><span class="glyphicon glyphicon-off"></span> Login</button>
           </form>
          </div>
         </div> 
        </div>
  
-
+ 
 </body>
 </html>

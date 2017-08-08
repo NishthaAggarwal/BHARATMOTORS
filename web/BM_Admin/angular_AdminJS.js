@@ -24,16 +24,38 @@
 //   };
 // };
 
-angular.module('BM_Site_Admin',['ui.bootstrap']);
+var app=angular.module('BM_Site_Admin',['ui.bootstrap']);
 
  angular.module('BM_Site_Admin').controller('Admin_controller', ['$scope','$modal',function ($scope, $modal) {
 $scope.showInsertForm = function () {
 console.log('opening pop up');
 var modalInstance = $modal.open({
-templateUrl: 'form.html',
+templateUrl: 'form.html',   
 });
 }
 }]);
+
+app.controller("LoginController",['$scope','$http', function($scope,$http){
+  
+$scope.validateCredentials = function(info){
+$http.post('ValidateDetails.php',{"admin_name":info.username,"admin_psw":info.psw}).success(function(data)
+{
+  $scope.result=data;
+ if (data == '1') {
+  $scope.message='User Logged In successfully';
+// // getInfo();
+// // Hide details insertion form
+// $('#categoryForm').css('display', 'none');
+// //console.log("data inserted successfully");
+ }
+ else
+  $scope.message='Entered wrong credentials';
+//console.log("data inserted successfully");
+});
+}
+  }]);
+
+
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used above.
 
