@@ -1,9 +1,12 @@
-<script src="../js/angular.min.js"></script>
+
+
 <?php
-include 'index.html' ;
+include 'index.html';
 foreach (glob("../css/*.css") as $filename) {
   echo"<link type='text/css' rel='stylesheet' href='$filename'>\n";
-} 
+ }
+  echo"<link rel='stylesheet' href='../css/bootstrap.css' type='text/css'>\n";
+
 ?>
 
 <?php

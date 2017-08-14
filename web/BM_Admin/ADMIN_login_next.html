@@ -3,41 +3,29 @@
 <head>
 <title>Bharat Motors</title>
 <link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- <link href="creative.css" rel='stylesheet' type='text/css' /> -->
+<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="../css/style.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../js/jquery.min.js"></script>
-<!-- <script src="../js/angular.min.js"></script> -->
-<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script> -->
-<!-- <link href="css/style.css" rel="stylesheet" type="text/css" media="all" /> -->
-<!-- Custom Theme files -->
+<script src="../js/angular.min.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <!-- for bootstrap working -->
 	<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
-  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
 <!-- //for bootstrap working -->
 <!-- cart -->
 	<script src="../js/simpleCart.min.js"> </script>
 	<script src="angular_AdminJS.js"></script>
- <!-- <script>
-$(document).ready(function(){
-      $("#myBtn").click(function(){
-        $("#myModal").modal();
-    });
-});
-</script>
-	
- -->
 <!-- cart -->
 <link rel="stylesheet" href="creative.css" type="text/css"  />
-
-    
-
 </head>
 <body ng-app="BM_Site_Admin" ng-controller="Admin_controller">
-{{ 5 + 5 }}
+{{kuch}}
+{{5+5}}
   <div class="header">
     <div class="header-top-strip">
     <div class="container" style="color:white;text-align: left;font-family: Courier;font-size: 30px;">
@@ -72,8 +60,8 @@ $(document).ready(function(){
 <th></th>
 </tr>
 <tr ng-repeat="detail in details| filter:search_query">
-<td>{{detail.category_id}}</td>
-<td>{{detail.category_name}}</td>
+<td>{{detail.product_id}}</td>
+<td>{{detail.product_name}}</td>
 <td>
 <button class="btn btn-warning" ng-click="editInfo(detail)" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
 </td>

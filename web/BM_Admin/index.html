@@ -5,6 +5,8 @@
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../js/jquery.min.js"></script>
+<script src="../js/angular.min.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
 <!-- <script src="../js/angular.min.js"></script> -->
 <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script> -->
 <!-- Custom Theme files -->
@@ -17,7 +19,7 @@
 
 <!-- for bootstrap working -->
 	<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
-	  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+	  <!-- <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script> -->
 
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
 <!-- //for bootstrap working -->
@@ -46,7 +48,8 @@
   </style>
 </head>
 <body ng-controller="LoginController">
-{{ message }}
+{{5+5}}
+
 	<div class="header">
 		<div class="header-top-strip">
 		<div class="container" style="color:white;text-align: center;font-family: Courier;font-size: 50px;">
@@ -54,7 +57,6 @@
 		</div>
 		</div>
 	</div>
-	
 	
 
 <div class="container">
@@ -66,19 +68,27 @@
           <h4 style="font-size: 30px"><span class="glyphicon glyphicon-lock" style="font-size: 30px" ></span> Login</h4>
         </div>
          <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
+         <div class="alert alert-info" id="successMessage" hidden>{{Msg}}</div>
+          <form  role="form" name="adminLoginForm">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" ng-model="adminInfo.username" id="username" placeholder="Enter name">
+              <input type="text" class="form-control" ng-model="adminInfo.username" name="username" placeholder="Enter name" required/>
             </div>
             <div class="form-group">
+			<p class="text-danger" ng-show="adminLoginForm.username.$invalid && adminLoginForm.username.$dirty">
+			<span ng-show="adminLoginForm.username.$error.required">UserName is required.</span>
+ 			 </span></p>
+			</div>
+            <div class="form-group">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" ng-model="adminInfo.psw" id="psw" placeholder="Enter password">
+              <input type="text" class="form-control" ng-model="adminInfo.psw" name="psw" placeholder="Enter password" required/>
             </div>
-            <!-- <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div> -->
-             <button type="submit" class="btn btn-block loginbutton" ng-click="validateCredentials(adminInfo)"><span class="glyphicon glyphicon-off"></span> Login</button>
+            <div class="form-group">
+			<p class="text-danger" ng-show="adminLoginForm.psw.$invalid && adminLoginForm.psw.$dirty">
+			<span ng-show="adminLoginForm.psw.$error.required">Password is required.</span>
+ 			 </span></p>
+			</div>
+             <button  type="submit" class="btn btn-block loginbutton" ng-click="validateCredentials(adminInfo)" ng-disabled="adminLoginForm.$invalid"><span class="glyphicon glyphicon-off"></span> Login</button>
           </form>
          </div>
         </div> 
