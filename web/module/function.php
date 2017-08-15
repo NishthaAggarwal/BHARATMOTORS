@@ -25,17 +25,34 @@ function add_product($data)
 function get_product()
 {
     $all_data = array();
-    $cursor=select_mongo('product',array(),array());
+    $datas = array();
+    $currentMonth = date('m');
+    $cursor=select_mongo('product',array(),array("creation_date"));
     foreach ($cursor as $doc) {
     array_push($all_data, $doc);
     }
-     return array("success" => "true", "data" => $all_data, "error_code" => "100");
+
+    foreach ($all_data as $data) {
+    $MongoDt = $data['creation_date'];
+    $sec = $MongoDt->sec;
+    $date =  date("m",$sec);
+    if($currentMonth == $date)
+    {
+        array_push($datas,$data);
+    }
+
+    }
+    if(!empty($datas)){
+     return array("success" => "true", "data" => $datas, "error_code" => "100");
+    }
+    else{
+      return array("success" => "false", "data" => 'Fetching failed', "error_code" => "102");  
+    }
 }
 
 function get_count_product()
 {
     $res=count_mongo('product',array());
-    pr($res);
      return array("success" => "true", "data" => $res, "error_code" => "100");
     // if($success['n']=='0')
     // {

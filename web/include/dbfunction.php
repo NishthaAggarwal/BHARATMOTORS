@@ -24,7 +24,7 @@ function delete_mongo($table,$condition)
 function select_mongo($table,$condition,$params=array())
 {
     global $db;
-    $res = $db->$table->find();
+    $res = $db->$table->find($condition,$params);
     return $res;
 }
 
