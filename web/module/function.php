@@ -21,13 +21,30 @@ function add_product($data)
     }
 }
 
-
 function get_product()
 {
     $all_data = array();
     $datas = array();
     $currentMonth = date('m');
-    $cursor=select_mongo('product',array(),array("creation_date"));
+    $cursor=select_mongo('product',array(),array());
+    foreach ($cursor as $doc) {
+    array_push($all_data, $doc);
+    }
+
+    if(!empty($all_data)){
+     return array("success" => "true", "data" => $all_data, "error_code" => "100");
+    }
+    else{
+      return array("success" => "false", "data" => 'Fetching failed', "error_code" => "102");  
+    }
+}
+
+function get_selected_product()
+{
+    $all_data = array();
+    $datas = array();
+    $currentMonth = date('m');
+    $cursor=select_limit_mongo('product',array(),array("creation_date"),0,1);
     foreach ($cursor as $doc) {
     array_push($all_data, $doc);
     }
