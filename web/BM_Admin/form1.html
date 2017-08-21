@@ -1,4 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bharat Motors</title>
+<link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="../css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="../css/style.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/angular.min.js"></script>
 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- for bootstrap working -->
+  <script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+<!-- //for bootstrap working -->
+<!-- cart -->
+  <script src="../js/simpleCart.min.js"> </script>
+  <script src="angular_AdminJS.js"></script>
+<!-- cart -->
+<link rel="stylesheet" href="creative.css" type="text/css"  />
+</head>
+<body ng-app="BM_Site_Admin" ng-controller="formController" >
+{{5+5}}
+{{Something}}
+{{msg1}}
+	<!-- <script type="text/ng-template" id="myModalContent.html"> -->
+  <!-- <div class="modal fade" id="myModal" role="dialog">  -->
+   
       <!-- Modal content-->
       <div class="modal-content" ng-controller="formController"> 
         <div class="modal-header" style="padding:35px 50px;">
@@ -11,10 +43,10 @@
          {{msg1}}
 
          <div class="modal-body" style="padding:40px 50px;">
-        <div> nav : {{message}}</div>
+         {{message}}
           <form class="form-horizontal alert alert-warning" role="form" name="ProductForm">
             <div class="form-group">
-              <label for="Product_name"> Product name2123123123</label>
+              <label for="Product_name"> Product Name</label>
               <input type="text" class="form-control" ng-model="productInfo.product_name" name="product_name" placeholder="Enter name" required>
             </div>
             <div class="form-group">
@@ -61,4 +93,9 @@
              
           </form>
          </div>
-        </div>
+        </div> 
+       </div>
+    
+  <!-- </script>
+</body>
+</html>

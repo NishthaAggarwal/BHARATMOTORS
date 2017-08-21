@@ -12,13 +12,13 @@ $http.post('productDetails.php').success(function(data){
 $scope.details = data;
 });
 }
-
+$scope.message="nav";
 $scope.showInsertForm = function ()
  {
 console.log('opening pop up');
 var modalInstance = $modal.open({
-templateUrl: 'form.html',   
-controller: Form_controller,
+templateUrl: 'form2.html',   
+controller: 'formController',
  // resolve: {
  //        productInfo: function () {
  //          return $scope.productInfo;
@@ -58,20 +58,41 @@ $http.post('ValidateDetails.php',{"admin_name":info.username,"admin_psw":info.ps
   }]);
 
 
-// Please note that $modalInstance represents a modal window (instance) dependency.
-// It is not the same as the $modal service used above.
 
-var Form_controller = function ($scope, $modalInstance) {
-
- 
-  $scope.insertInfo = function (productInfo) {
+app.controller("formController",['$scope','$http','$modalInstance', function($scope,$http,$modalInstance){
+  $scope.message="check1";
+ $scope.insertInfo = function (productInfo) {
     // $modalInstance.close($scope.selected.item);
-    $scope.Something="chlaaaaa ";
+   
     $http.post('insertProductDetails.php',{"product_name":productInfo.product_name}).success(function(data)
       {
         $scope.msg1=data;
+         $scope.message="Added successfully";
+        alert("asd");
+         $modalInstance.close();
       });
+    
+
   };
+  }]);
+
+// Please note that $modalInstance represents a modal window (instance) dependency.
+// It is not the same as the $modal service used above.
+
+// var Form_controller = function ($scope, $modalInstance) {
+
+ 
+//   $scope.insertInfo = function (productInfo) {
+//     alert("nav");
+//     $modalInstance.close();
+//     // $modalInstance.close($scope.selected.item);
+//     $scope.Something="chlaaaaa ";
+//     // $http.post('insertProductDetails.php',{"product_name":productInfo.product_name}).success(function(data)
+//     //   {
+//     //     $scope.msg1=data;
+//     //   });
+
+//   };
 
   
-};
+// };
