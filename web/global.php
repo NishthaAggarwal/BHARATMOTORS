@@ -21,6 +21,11 @@ if(end($httpHost)=='com')
     	global $site_url;
     	return $site_url . "web/js/";
     }
+    function img_url()
+    {
+        global $site_url;
+        return $site_url . "web/images/";
+    }
     function css_url()
     {
     	global $site_url;
