@@ -4,7 +4,7 @@ include '../include/dbfunction.php';
 function add_product($data)
 { 
     //$data['_id']=new MongoId();
-    $data['creation_date']=new MongoDate();
+    // $data['creation_date']=new MongoDate();
     $count=count_mongo('product',array());
     $result = array_merge(array('product_id' => $count + 1), $data);
     $success=insert_mongo('product',$result);

@@ -64,11 +64,11 @@ app.controller("formController",['$scope','$http','$modalInstance', function($sc
  $scope.insertInfo = function (productInfo) {
     // $modalInstance.close($scope.selected.item);
    
-    $http.post('insertProductDetails.php',{"product_name":productInfo.product_name}).success(function(data)
+    $http.post('insertProductDetails.php',{"product_name":productInfo.product_name,"product_description":productInfo.product_description,"product_price":productInfo.product_price,"product_quantity":productInfo.product_quantity}).success(function(data)
       {
         $scope.msg1=data;
          $scope.message="Added successfully";
-        alert("asd");
+        alert(data);
          $modalInstance.close();
       });
     
