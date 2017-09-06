@@ -3,9 +3,11 @@ include '../include/dbfunction.php';
 
 function add_product($data)
 { 
-    //$data['_id']=new MongoId();
-    // $data['creation_date']=new MongoDate();
-    $count=count_mongo('product',array());
+    $data['creation_date']=new MongoDate();
+    $last = last_record('product',array(),array('product_id'),array('_id'=> -1),1);
+    foreach ($last as $doc) {
+    $count = $doc['product_id'];
+    }
     $result = array_merge(array('product_id' => $count + 1), $data);
     $success=insert_mongo('product',$result);
 
@@ -44,11 +46,10 @@ function get_selected_product()
     $all_data = array();
     $datas = array();
     $currentMonth = date('m');
-    $cursor=select_limit_mongo('product',array(),array("creation_date"),0,1);
+    $cursor=select_limit_mongo('product',array(),array(),0,5);
     foreach ($cursor as $doc) {
     array_push($all_data, $doc);
     }
-
     foreach ($all_data as $data) {
     $MongoDt = $data['creation_date'];
     $sec = $MongoDt->sec;
