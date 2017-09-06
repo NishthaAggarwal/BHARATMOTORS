@@ -47,6 +47,7 @@ function get_selected_product()
     $all_data = array();
     $datas = array();
     $currentMonth = date('m');
+    $currentMonth = $currentMonth - 1 ;
     $cursor=select_limit_mongo('product',array(),array(),0,5);
     foreach ($cursor as $doc) {
     array_push($all_data, $doc);
@@ -73,17 +74,6 @@ function get_count_product()
 {
     $res=count_mongo('product',array());
      return array("success" => "true", "data" => $res, "error_code" => "100");
-    // if($success['n']=='0')
-    // {
-    //     //$id=$data['_id']->{$data['product_id']};
-
-    //     return array('data'=>'Data is present','error_code'=>'100','success'=>'true');  
-    // }
-    // else
-    // {
-
-    //     return array('data'=>'data not present','error_code'=>'102','success'=>'false');  
-    // }
 }
 
 
