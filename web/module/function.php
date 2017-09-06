@@ -3,13 +3,12 @@ include '../include/dbfunction.php';
 
 function add_product($data)
 { 
-    $all_data = array();
     $data['creation_date']=new MongoDate();
     $last = last_record('product',array(),array('product_id'),array('_id'=> -1),1);
     foreach ($last as $doc) {
-    array_push($all_data, $doc);
+    $count = $doc['product_id'];
     }
-    $count = $all_data[0]['product_id'];
+    
     $result = array_merge(array('product_id' => $count + 1), $data);
     $success=insert_mongo('product',$result);
 
