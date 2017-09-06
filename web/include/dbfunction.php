@@ -56,5 +56,12 @@ function mongo_time()
 	$created_at = new MongoDate(time());
 	return $created_at;
 }
+function last_record($table,$condition,$params=array(),$sortarray,$nrecords)
+{
+    global $db;
+    $res = $db->$table->find($condition,$params)->sort($sortarray)->limit($nrecords);
+    return $res;
+}
+
 
 ?>
